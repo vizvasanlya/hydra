@@ -1,0 +1,14 @@
+trigger:
+- main
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+steps:
+- task: AzureCLI@2
+  inputs:
+    azureSubscription: 'YOUR_SERVICE_CONNECTION_NAME'
+    scriptType: 'bash'
+    scriptPath: '$(Build.SourcesDirectory)/scripts/deploy-vm.sh'
+    arguments: '--resource-group myResourceGroup --template-file $(Build.SourcesDirectory)/templates/azuredeploy.json --parameters $(Build.SourcesDirectory)/templates/azuredeploy.parameters.json'
+  displayName: 'Deploy VM'
