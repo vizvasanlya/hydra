@@ -35,3 +35,11 @@
     }
   ]
 }
+
+#!/bin/bash
+set -e
+
+az deployment group create \
+  --resource-group $1 \
+  --template-file $2 \
+  --parameters $3
