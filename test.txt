@@ -2,5 +2,5 @@ this is a sample data
 to test and learn more
 now send 
 this data to another file
-Happt learning
+Happy learning
 
